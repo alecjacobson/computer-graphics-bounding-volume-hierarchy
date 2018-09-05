@@ -1,0 +1,6 @@
+[submodule "shared"]
+	path = shared
+	url = https://github.com/alecjacobson/computer-graphics-shared
+[submodule "libigl"]
+	path = libigl
+	url = https://github.com/libigl/libigl
