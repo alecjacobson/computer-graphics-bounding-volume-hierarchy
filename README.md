@@ -7,7 +7,7 @@
 
 ## Background 
 
-### Read Section 12.3 of _Fundamentals of Comptuer Graphics (4th Edition)_.
+### Read Section 12.3 of _Fundamentals of Computer Graphics (4th Edition)_.
 
 ![Visualize of all of the boxes of a hierarchical axis-aligned bounding-box tree
 around the triangles of a [rubber
