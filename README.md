@@ -9,10 +9,10 @@
 
 ### Read Section 12.3 of _Fundamentals of Comptuer Graphics (4th Edition)_.
 
-[rubber-ducky-aabb-tree]: images/rubber-ducky-aabb-tree.png width=600px
 ![Visualize of all of the boxes of a hierarchical axis-aligned bounding-box tree
 around the triangles of a [rubber
-ducky](https://en.wikipedia.org/wiki/Rubber_duck) mesh.][rubber-ducky-aabb-tree]
+ducky](https://en.wikipedia.org/wiki/Rubber_duck)
+mesh.](images/rubber-ducky-aabb-tree.png)
 
 ### Object partitioning 
 
@@ -46,11 +46,10 @@ objects.
 > **Question:** If we use overlapping bounding boxes (i.e., no splitting) to
 > build an AABB Tree , how many leaves will there be?
 
-[point-cloud-aabb-tree]: images/point-cloud-aabb-tree.gif width=600px
 ![The AABB Tree around a point cloud starts with a single box. The next level
 has two boxes, roughly splitting the first box. This process continues
 recursively until there's only a single point in the
-box.][point-cloud-aabb-tree]
+box.](images/point-cloud-aabb-tree.gif)
 
 
 In contrast, space partitioning schemes (e.g., [kd
@@ -203,10 +202,9 @@ intersections_ rather than the number of input triangles (as brute force
 double-for loops does). This list can then be processed using the (expensive)
 triangle-triangle intersection test in a **_narrow phase_**.
 
-[cheburashka-knight]: images/cheburashka-knight-intersections.gif width=600px
 ![Using an AABB Tree for each shape (light red and light blue triangle meshes),
 we identify a set of candidate intersecting bounding boxes (red and blue).
-][cheburashka-knight]
+](images/cheburashka-knight-intersections.gif)
 
 > **Question:** Suppose we want to detect intersections for a simulation of two
 > deforming meshes (e.g., elastic solids bumping into each other). Can we reuse
