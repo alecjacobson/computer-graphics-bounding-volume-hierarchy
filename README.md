@@ -59,7 +59,7 @@ each level of the tree, with no overlapping. This makes query code easy to
 write, but necessitates splitting of objects that inevitably straddle partition
 boundaries.
 
-> **Question:** Which is better for an unstructured set of points, _space paritioning_ or
+> **Question:** Which is better for an unstructured set of points, _space partitioning_ or
 > _object partitioning_?
 >
 > **Hint:** No perfect answer, but consider: do you ever need to split a point?
