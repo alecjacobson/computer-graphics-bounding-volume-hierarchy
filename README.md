@@ -91,7 +91,7 @@ doesn't have to visit the entire tree because most boxes are not hit by the
 given ray. In this way, many search paths are quickly aborted.
 
 On the other hand, using this style of depth-first search for closest point
-queries can a disaster. Every box has _some_ closest point to our query.  A
+queries can be a disaster. Every box has _some_ closest point to our query.  A
 naive depth-first search could end up searching over every box before finding
 the one with the smallest query.
 
