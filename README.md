@@ -118,7 +118,7 @@ looking path in our tree wherever it might be.
 > **[Hint](https://en.wikipedia.org/wiki/Call_stack):** Where are the instructions and data of your program stored?
 
 [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search) is a
-much better structure for distance queries on a spacial acceleration
+much better structure for distance queries on a spatial acceleration
 data-structure. Pseudo-code for a closest distance algorithm might look like:
 
 ```
@@ -140,11 +140,11 @@ while Q not empty
       Q.insert(d_r ,subtree.right)
 ```
 
-> **Question:**  If I only have only every will have a single query to conduct
-> on a set of $n$ objects, is it worth it to use a BVH?
+> **Question:**  If I have just a single query to conduct on a set of $n$
+> objects, is it worth it to use a BVH?
 >
-> **Hint:** What is the complexity of _building_ a BVH? What is the complexity of
-> a single brute force query?
+> **Hint:** What is the complexity of _building_ a BVH? What is the complexity
+> of a single brute force query?
 
 ### Intersection queries between two trees
 
