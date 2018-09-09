@@ -102,7 +102,7 @@ the leaves before finally finding the leaf containing the true closest point at
 the very end.
 
 This implies that we can't just explore the left or right subtrees (or their
-prodigy) in arbitrary order. A quick fix is to peek at the closet distance to
+progeny) in arbitrary order. A quick fix is to peek at the closet distance to
 the boxes containing the left and right trees respectively and prefer our depth
 first search in the closest direction. This helps, but we still end up
 _drilling_ down to leaves when there are potentially entire large subtrees that
