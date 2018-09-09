@@ -59,7 +59,7 @@ each level of the tree, with no overlapping. This makes query code easy to
 write, but necessitates splitting of objects that inevitably straddle partition
 boundaries.
 
-> **Question:** Which is better for an unstructured set of points, _space paritioning_ or
+> **Question:** Which is better for an unstructured set of points, _space partitioning_ or
 > _object partitioning_?
 >
 > **Hint:** No perfect answer, but consider: do you ever need to split a point?
@@ -91,7 +91,7 @@ doesn't have to visit the entire tree because most boxes are not hit by the
 given ray. In this way, many search paths are quickly aborted.
 
 On the other hand, using this style of depth-first search for closest point
-queries can a disaster. Every box has _some_ closest point to our query.  A
+queries can be a disaster. Every box has _some_ closest point to our query.  A
 naive depth-first search could end up searching over every box before finding
 the one with the smallest query.
 
@@ -102,7 +102,7 @@ the leaves before finally finding the leaf containing the true closest point at
 the very end.
 
 This implies that we can't just explore the left or right subtrees (or their
-prodigy) in arbitrary order. A quick fix is to peek at the closet distance to
+progeny) in arbitrary order. A quick fix is to peek at the closet distance to
 the boxes containing the left and right trees respectively and prefer our depth
 first search in the closest direction. This helps, but we still end up
 _drilling_ down to leaves when there are potentially entire large subtrees that
