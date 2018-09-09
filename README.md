@@ -80,11 +80,11 @@ evaluation.](images/bounding-primitives.png)
 
 ### Ray-intersection queries
 
-See Section 12.3 of _Fundamentals of Comptuer Graphics (4th Edition)_.
+See Section 12.3 of _Fundamentals of Computer Graphics (4th Edition)_.
 
 ### Distance queries
 
-The recursive algorithm in _Fundamentals of Comptuer Graphics (4th Edition)_ for
+The recursive algorithm in _Fundamentals of Computer Graphics (4th Edition)_ for
 ray-AABBTree-intersection is essentially performing a [depth first
 search](https://en.wikipedia.org/wiki/Depth-first_search). The search usually
 doesn't have to visit the entire tree because most boxes are not hit by the
