@@ -66,7 +66,13 @@ int main(int argc, char * argv[])
     const double inf = std::numeric_limits<double>::infinity();
     point_AABBTree_squared_distance(
       query,root,0,inf,tree_sqrD(i),projection,closest_object);
-    tree_I(i) = std::static_pointer_cast<CloudPoint>(closest_object)->i;
+    if(closest_object)
+    {
+      tree_I(i) = std::static_pointer_cast<CloudPoint>(closest_object)->i;
+    }else
+    {
+      tree_I(i) = -1;
+    }
   }
   std::cout<<"  | use tree    | " << FLOAT15 << toc() << " |"<<std::endl;
  
