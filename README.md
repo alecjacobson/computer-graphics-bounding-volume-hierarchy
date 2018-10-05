@@ -377,6 +377,10 @@ Running `./distances` you should also see something like this:
   | use tree    |   0.05846095085 |
 ```
 
+### `src/point_triangle_squared_distance.cpp`
+Compute the squared distance of a query point to a triangle, output the closest
+point on the triangle in barycentric coordinates.
+
 ### `src/triangle_triangle_intersection.cpp`
 
 Determine whether two triangles intersect.
