@@ -3,7 +3,7 @@
 
 #include "AABBTree.h"
 #include <Eigen/Core>
-#include <igl/opengl/glfw/viewer.h>
+#include <igl/opengl/glfw/Viewer.h>
 
 // Visualization of AABB tree around a mesh
 inline void visualize_aabbtree(
