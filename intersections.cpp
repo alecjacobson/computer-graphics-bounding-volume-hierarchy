@@ -21,12 +21,12 @@ int main(int argc, char * argv[])
   // Read in a triangle mesh
   Eigen::MatrixXd VA;
   Eigen::MatrixXi FA;
-  igl::read_triangle_mesh(argc>1?argv[1]:"../shared/data/knight.obj",VA,FA);
+  igl::read_triangle_mesh(argc>1?argv[1]:"../data/knight.obj",VA,FA);
   std::cout<<"  |VA| "<<VA.rows()<<"  "<<std::endl;
   std::cout<<"  |FA| "<<FA.rows()<<"  "<<std::endl<<std::endl;
   Eigen::MatrixXd VB;
   Eigen::MatrixXi FB;
-  igl::read_triangle_mesh(argc>2?argv[2]:"../shared/data/cheburashka.obj",VB,FB);
+  igl::read_triangle_mesh(argc>2?argv[2]:"../data/cheburashka.obj",VB,FB);
   std::cout<<"  |VB| "<<VB.rows()<<"  "<<std::endl;
   std::cout<<"  |FB| "<<FB.rows()<<"  "<<std::endl<<std::endl;
 

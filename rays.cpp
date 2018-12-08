@@ -23,7 +23,7 @@ int main(int argc, char * argv[])
   // Read in a triangle mesh
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
-  igl::read_triangle_mesh(argc>1?argv[1]:"../shared/data/rubber-ducky.obj",V,F);
+  igl::read_triangle_mesh(argc>1?argv[1]:"../data/rubber-ducky.obj",V,F);
   std::cout<<"  |V| "<<V.rows()<<"  "<<std::endl;
   std::cout<<"  |F| "<<F.rows()<<"  "<<std::endl<<std::endl;
   // Make a bunch of random rays
