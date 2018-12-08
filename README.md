@@ -1,6 +1,6 @@
 # Computer Graphics – Bounding Volume Hierarchy 
 
-> **To get started:** Fork this repository then issue
+> **To get started:** Clone this repository 
 > 
 >     git clone --recursive http://github.com/[username]/computer-graphics-bounding-volume-hierarchy.git
 >

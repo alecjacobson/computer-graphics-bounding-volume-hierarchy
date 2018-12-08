@@ -38,7 +38,6 @@ struct MeshTriangle : public Object
       const double min_sqrd,
       const double max_sqrd,
       double & sqrd,
-      Eigen::RowVector3d & projection,
       std::shared_ptr<Object> & descendant) const override;
 };
 
@@ -86,7 +85,6 @@ inline bool MeshTriangle::point_squared_distance(
   const double min_sqrd,
   const double max_sqrd,
   double & sqrd,
-  Eigen::RowVector3d & projection,
   std::shared_ptr<Object> & descendant) const
 {
   Eigen::RowVector3d bary;
@@ -96,10 +94,6 @@ inline bool MeshTriangle::point_squared_distance(
     V.row(F(f,1)),
     V.row(F(f,2)),
     bary);
-  projection = 
-    V.row(F(f,0))*bary(0)+
-    V.row(F(f,1))*bary(1)+
-    V.row(F(f,2))*bary(2);
   // descendant doesn't make sense so it's not touched
   return (sqrd >= min_sqrd && sqrd < max_sqrd);
 }

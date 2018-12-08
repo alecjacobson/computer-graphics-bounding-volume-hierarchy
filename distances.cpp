@@ -62,10 +62,9 @@ int main(int argc, char * argv[])
   {
     Eigen::RowVector3d query = queries.row(i);
     std::shared_ptr<Object> closest_object;
-    Eigen::RowVector3d projection;
     const double inf = std::numeric_limits<double>::infinity();
     point_AABBTree_squared_distance(
-      query,root,0,inf,tree_sqrD(i),projection,closest_object);
+      query,root,0,inf,tree_sqrD(i),closest_object);
     if(closest_object)
     {
       tree_I(i) = std::static_pointer_cast<CloudPoint>(closest_object)->i;

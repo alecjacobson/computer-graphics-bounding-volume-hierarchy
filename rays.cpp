@@ -28,7 +28,7 @@ int main(int argc, char * argv[])
   std::cout<<"  |F| "<<F.rows()<<"  "<<std::endl<<std::endl;
   // Make a bunch of random rays
   std::vector<Ray> rays;
-  rays.reserve(argc>2?std::stoi(argv[2]):100);
+  rays.reserve(argc>2?std::stoi(argv[2]):1000);
   // Default bounds on ray
   double min_t = 0;
   double max_t = std::numeric_limits<double>::infinity();

@@ -7,7 +7,6 @@ bool point_AABBTree_squared_distance(
     const double min_sqrd,
     const double max_sqrd,
     double & sqrd,
-    Eigen::RowVector3d & projection,
     std::shared_ptr<Object> & descendant)
 {
   ////////////////////////////////////////////////////////////////////////////

@@ -48,7 +48,6 @@ struct AABBTree : public Object, public std::enable_shared_from_this<AABBTree>
     const double min_sqrd,
     const double max_sqrd,
     double & sqrd,
-    Eigen::RowVector3d & projection,
     std::shared_ptr<Object> & descendant) const override
   {
     assert(false && "Do not use recursive DFS for AABBTree distance");

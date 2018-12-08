@@ -26,7 +26,6 @@ struct CloudPoint final : public Object
     const double min_sqrd,
     const double max_sqrd,
     double & sqrd,
-    Eigen::RowVector3d & projection,
     std::shared_ptr<Object> & descendant) const override;
 };
 
@@ -51,10 +50,9 @@ inline bool CloudPoint::point_squared_distance(
   const double min_sqrd,
   const double max_sqrd,
   double & sqrd,
-  Eigen::RowVector3d & projection,
   std::shared_ptr<Object> & descendant) const
 {
-  projection = points.row(i);
+  const auto projection = points.row(i);
   // descendant doesn't make sense so it's not touched
   sqrd = (query-projection).squaredNorm();
   return (sqrd >= min_sqrd && sqrd < max_sqrd);

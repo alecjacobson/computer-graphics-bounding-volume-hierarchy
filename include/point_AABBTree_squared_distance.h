@@ -16,8 +16,6 @@
 //   max_sqrd  maximum squared distance to consider (often infinity)
 // Outputs
 //   sqrd  squared distance 
-//   projection  orthogonal projection of query onto object (i.e., point that
-//     "realizes" minimal squared distance.
 //   descendant  if minimal distance was found at a descendant, pass along a
 //     pointer to that descendant (only necessary for hierarchical Objects)
 bool point_AABBTree_squared_distance(
@@ -26,7 +24,6 @@ bool point_AABBTree_squared_distance(
   const double min_sqrd,
   const double max_sqrd,
   double & sqrd,
-  Eigen::RowVector3d & projection,
   std::shared_ptr<Object> & descendant);
 
 #endif

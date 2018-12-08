@@ -13,17 +13,11 @@
 //   box  Axis-aligned solid box (presumably bounding some thing(s)
 //   min_t  minimum parameteric distance along ray to consider for hits
 //   max_t  maximum parameteric distance along ray to consider for hits
-//// Outputs:
-////   t  parametric distance along ray to hit (IGNORED)
-////   n  surface normal of hit (can use box face normal or set to (0,0,0) for
-////     interior hits.
 // Returns true if ray intersects the box between min_t and max_t
 
 bool ray_intersect_box(
   const Ray & ray,
   const BoundingBox& box,
   const double min_t,
-  const double max_t,
-  double & /*t*/);
-  //Eigen::Vector3d & n);
+  const double max_t);
 #endif
