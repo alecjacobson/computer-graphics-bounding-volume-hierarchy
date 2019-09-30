@@ -471,7 +471,6 @@ references as per academic honesty policies.</p>
 <li><code>igl::ray_box_intersect</code></li>
 <li><code>igl::ray_mesh_intersect</code></li>
 <li><code>igl::ray_mesh_intersect</code></li>
-<li><code>igl::point_simplex_squared_distance.cpp</code></li>
 </ul>
 
 <h3 id="srcray_intersect_triangle.cpp"><code>src/ray_intersect_triangle.cpp</code></h3>
@@ -512,7 +511,7 @@ determine the left-right split.</p>
 method should perform in <span class="math">\(O(\log{n})\)</span> time for a tree containing <span class="math">\(n\)</span>
 (reasonably distributed) objects.</p>
 
-<p>If you run <code>./rays</code> you should see something like:</p>
+<p>If you run <code>./rays ../data/rubber-ducky.obj</code> you should see something like:</p>
 
 <pre><code># Ray Triangle Mesh Intersection
   |V| 334
@@ -553,7 +552,7 @@ computational complexity of <span class="math">\(O(n)\)</span> but focus on corr
 using a priority queue. <em><strong>Note:</strong> this function is <strong>not</strong> meant to be called
 recursively.</em></p>
 
-<p>Running <code>./distances</code> you should also see something like this:</p>
+<p>Running <code>./distances 100000 10000</code> you should also see something like this:</p>
 
 <pre><code># Point Cloud Distance Queries
     |points|: 100000
@@ -566,10 +565,7 @@ recursively.</em></p>
   | use tree    |   0.05846095085 |
 </code></pre>
 
-<h3 id="srcpoint_triangle_squared_distance.cpp"><code>src/point_triangle_squared_distance.cpp</code></h3>
-
-<p>Compute the squared distance of a query point to a triangle, output the closest
-point on the triangle in barycentric coordinates.</p>
+<hr />
 
 <h3 id="srctriangle_triangle_intersection.cpp"><code>src/triangle_triangle_intersection.cpp</code></h3>
 
@@ -583,7 +579,7 @@ point on the triangle in barycentric coordinates.</p>
 
 <p>Find all intersecting pairs of <em>leaf boxes</em> between one AABB tree and another</p>
 
-<p>Running <code>./intersections</code> will also produce something like this:</p>
+<p>Running <code>./intersections ../data/knight.obj ../data/cheburashka.obj</code> will also produce something like this:</p>
 
 <pre><code># Triangle Mesh Intersection Detection
   |VA| 2002

@@ -33,12 +33,17 @@ struct MeshTriangle : public Object
       const double max_t,
       double & t,
       std::shared_ptr<Object> & descendant) const override;
-    inline bool point_squared_distance(
+    bool point_squared_distance(
       const Eigen::RowVector3d & query,
       const double min_sqrd,
       const double max_sqrd,
       double & sqrd,
-      std::shared_ptr<Object> & descendant) const override;
+      std::shared_ptr<Object> & descendant) const override
+    {
+      /* Not implemented, nor used in this assignment */
+      assert(false);
+      return false;
+    }
 };
 
 
@@ -46,7 +51,6 @@ struct MeshTriangle : public Object
 
 #include "insert_triangle_into_box.h"
 #include "ray_intersect_triangle.h"
-#include "point_triangle_squared_distance.h"
 
 inline MeshTriangle::MeshTriangle(
     const Eigen::MatrixXd & _V,
@@ -79,23 +83,5 @@ inline bool MeshTriangle::ray_intersect(
     t);
 }
 
-// Simple wrapper around `point_triangle_squared_distance`
-inline bool MeshTriangle::point_squared_distance(
-  const Eigen::RowVector3d & query,
-  const double min_sqrd,
-  const double max_sqrd,
-  double & sqrd,
-  std::shared_ptr<Object> & descendant) const
-{
-  Eigen::RowVector3d bary;
-  sqrd = point_triangle_squared_distance(
-    query,
-    V.row(F(f,0)),
-    V.row(F(f,1)),
-    V.row(F(f,2)),
-    bary);
-  // descendant doesn't make sense so it's not touched
-  return (sqrd >= min_sqrd && sqrd < max_sqrd);
-}
 
 #endif

@@ -341,7 +341,6 @@ references as per academic honesty policies.
  - `igl::ray_box_intersect`
  - `igl::ray_mesh_intersect`
  - `igl::ray_mesh_intersect`
- - `igl::point_simplex_squared_distance.cpp`
 
 ### `src/ray_intersect_triangle.cpp`
 
@@ -436,9 +435,8 @@ Running `./distances 100000 10000` you should also see something like this:
   | use tree    |   0.05846095085 |
 ```
 
-### `src/point_triangle_squared_distance.cpp`
-Compute the squared distance of a query point to a triangle, output the closest
-point on the triangle in barycentric coordinates.
+-----------------------------
+
 
 ### `src/triangle_triangle_intersection.cpp`
 
