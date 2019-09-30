@@ -240,6 +240,19 @@ force $O(n)$ algorithms. For large inputs the difference should be striking.
 
 ### Whitelist
 
+You're encouraged to use the following
+
+ - `std::numeric_limits<double>::infinity()` and
+   `-std::numeric_limits<double>::infinity()` in `#include <limits>` are often
+   useful for initializing values before calculating a running minimum or
+   maximum respectively.
+ - `std::priority_queue`
+ - `std::list` useful as a simple (non-priority) queue
+ - `std::pair` often useful to store key-value pairs (e.g., a priority and its
+   corresponding object)
+
+#### Shared Pointers
+
 This assignment uses [smart
 pointers](https://en.wikipedia.org/wiki/Smart_pointer). In particular,
 [`std::shared_ptr`](https://en.cppreference.com/w/cpp/memory/shared_ptr). For
@@ -262,16 +275,60 @@ And omit deletion lines:
 // Instead, it's destroyed when the last shared_ptr to A is destroyed
 ```
 
-You're encouraged to use the following
+This assignment also uses
+[inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+For example, `AABBTree` and `MeshTriangle` and `CloudPoint` are all derived from
+a common _base case_ called `Object`.
 
- - `std::numeric_limits<double>::infinity()` and
-   `-std::numeric_limits<double>::infinity()` in `#include <limits>` are often
-   useful for initializing values before calculating a running minimum or
-   maximum respectively.
- - `std::priority_queue`
- - `std::list` useful as a simple (non-priority) queue
- - `std::pair` often useful to store key-value pairs (e.g., a priority and its
-   corresponding object)
+Using `std::dynamic_pointer_cast<>`, it is possible to _attempt_ to cast a
+`std::shared_ptr<>` to a base class instance into a `std::shared_ptr<>` of a
+subclass. This casting will only succeed if the underying instance actually is
+that subclass. Consider this self-contained example:
+
+```
+#include <memory>
+#include <vector>
+#include <iostream>
+
+struct Object{/*Need a virtual function for polymorphism */virtual ~Object(){}};
+struct AABBTree     : public Object{};
+struct CloudPoint   : public Object{};
+struct MeshTriangle : public Object{};
+
+int main(int argc, char * argv[])
+{
+  // Make a bunch of different subclasses of Object
+  std::shared_ptr<AABBTree>     A = std::make_shared<AABBTree>();
+  std::shared_ptr<CloudPoint>   B = std::make_shared<CloudPoint>();
+  std::shared_ptr<MeshTriangle> C = std::make_shared<MeshTriangle>();
+  // Put them in a list of Objects
+  std::vector<std::shared_ptr<Object> > list_of_objects = {A,B,C};
+  // Loop over each Object
+  for(std::shared_ptr<Object> obj : list_of_objects)
+  {
+    // Attempt to cast to AABBTree
+    std::shared_ptr<AABBTree> aabb = std::dynamic_pointer_cast<AABBTree>(obj);
+    // Test whether cast succeed
+    if(aabb)
+    {
+      // Hooray. We can do AABBTree-specific operations on `aabb` now.
+      std::cout<<"This object is an AABBTree."<<std::endl;
+    }else
+    {
+      // Hooray. Now we know `obj` does _not_ point to an AABBTree. Hint, hint.
+      std::cout<<"This object is not an AABBTree."<<std::endl;
+    }
+  }
+}
+```
+
+Compiling and executing this will print:
+
+```
+This object is an AABBTree.
+This object is not an AABBTree.
+This object is not an AABBTree.
+```
 
 ### Blacklist
 
@@ -322,7 +379,7 @@ Determine whether and how a ray intersects the contents of an AABB tree. The
 method should perform in $O(\log{n})$ time for a tree containing $n$
 (reasonably distributed) objects.
 
-If you run `./rays` you should see something like:
+If you run `./rays ../data/rubber-ducky.obj` you should see something like:
 
 ```
 # Ray Triangle Mesh Intersection
@@ -365,7 +422,7 @@ Compute the distrance from a query point to the objects stored in a AABBTree
 using a priority queue. _**Note:** this function is **not** meant to be called
 recursively._
 
-Running `./distances` you should also see something like this:
+Running `./distances 100000 10000` you should also see something like this:
 
 ```
 # Point Cloud Distance Queries
@@ -395,7 +452,7 @@ Determine if two bounding boxes intersect
 
 Find all intersecting pairs of _leaf boxes_ between one AABB tree and another
 
-Running `./intersections` will also produce something like this:
+Running `./intersections ../data/knight.obj ../data/cheburashka.obj` will also produce something like this:
 
 ```
 # Triangle Mesh Intersection Detection
