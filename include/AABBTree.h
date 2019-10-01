@@ -36,7 +36,7 @@ struct AABBTree : public Object, public std::enable_shared_from_this<AABBTree>
   AABBTree(
     const std::vector<std::shared_ptr<Object> > & objects, 
     int depth=0);
-  // Object implementations (see Object.h)
+  // Object implementations (see Object.h for API)
   bool ray_intersect(
     const Ray& ray,
     const double min_t,

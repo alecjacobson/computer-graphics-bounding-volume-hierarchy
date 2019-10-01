@@ -372,7 +372,7 @@ Construct an axis-aligned bounding box tree given a list of objects. Use the
 midpoint along the longest axis of the box containing the given objects to
 determine the left-right split.
 
-### `AABBTree::ray_intersect` in `src/AABBTree.cpp`
+### `AABBTree::ray_intersect` in `src/AABBTree_ray_intersect.cpp`
 
 Determine whether and how a ray intersects the contents of an AABB tree. The
 method should perform in $O(\log{n})$ time for a tree containing $n$
