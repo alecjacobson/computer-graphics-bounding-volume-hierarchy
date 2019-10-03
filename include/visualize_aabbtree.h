@@ -132,7 +132,7 @@ inline void visualize_aabbtree(
   v.data().set_face_based(true);
   v.data().set_colors(Eigen::RowVector3d(146,197,222)/255.);
   v.data().set_edges(EVB,EEB,Eigen::RowVector3d(5,113,176)/255.);
-  v.core().background_color.setConstant(0.8);
+  v.core.background_color.setConstant(0.8);
   v.launch();
 }
 
