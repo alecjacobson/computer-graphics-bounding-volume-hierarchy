@@ -6,6 +6,21 @@
 >
 > **Do not fork:** Clicking "Fork" will create a _public_ repository. If you'd like to use GitHub while you work on your assignment, then mirror this repo as a new _private_ repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
 
+> **Note for Linux users:** if you're using Ubuntu, make sure you've installed the following packages if
+> you haven't done so already:
+>
+>     sudo apt-get install git
+>     sudo apt-get install build-essential
+>     sudo apt-get install cmake
+>     sudo apt-get install libx11-dev
+>     sudo apt-get install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev
+>     sudo apt-get install libxinerama1 libxinerama-dev
+>     sudo apt-get install libxcursor-dev
+>     sudo apt-get install libxrandr-dev
+>     sudo apt-get install libxi-dev
+>     sudo apt-get install libxmu-dev
+>     sudo apt-get install libblas-dev
+
 
 ## Background 
 
