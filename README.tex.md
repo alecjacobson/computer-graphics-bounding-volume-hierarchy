@@ -140,20 +140,20 @@ data-structure. Pseudo-code for a closest distance algorithm might look like:
 
 ```
 // initialize a queue prioritized by minimum distance
-d_r ← distance to root's box
+d_r \Leftarrow  distance to root's box
 Q.insert(d_r, root)
 // initialize minimum distance seen so far
-d ← ∞
+d \Leftarrow  \infty 
 while Q not empty 
   // d_s: distance from query to subtree's bounding box
-  (d_s, subtree) ← Q.pop
+  (d_s, subtree) \Leftarrow  Q.pop
   if d_s < d
     if subtree is a leaf
-      d ← min[ d , distance from query to leaf object ]
+      d \Leftarrow  min[ d , distance from query to leaf object ]
     else
-      d_l ← distance to left's box
+      d_l \Leftarrow  distance to left's box
       Q.insert(d_l ,subtree.left)
-      d_r ← distance to right's box
+      d_r \Leftarrow  distance to right's box
       Q.insert(d_r ,subtree.right)
 ```
 
@@ -179,11 +179,11 @@ this:
 
 ```
 // initialize list of candidate leaf pairs
-leaf_pairs ← {}
+leaf_pairs \Leftarrow  {}
 if root_A.box intersects root_B.box
   Q.insert( root_A, root_B )
 while Q not empty
-  {nodeA,nodeB} ← Q.pop
+  {nodeA,nodeB} \Leftarrow  Q.pop
   if nodeA and nodeB are leaves
     leaf_pairs.insert( node_A, node_B )
   else if node_A is a leaf
@@ -228,7 +228,7 @@ we identify a set of candidate intersecting bounding boxes (red and blue).
 > our AABB Tree even if the meshes are deforming? What if they're just moving
 > rigidly (rotations and translations)?
 >
-> **Hint:** Is an axis-aligned box still axis-aligned if it's rotated 45°?
+> **Hint:** Is an axis-aligned box still axis-aligned if it's rotated 45^\circ ?
 
 ### Timing
 
