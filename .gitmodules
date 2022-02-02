@@ -1,3 +1,6 @@
 [submodule "libigl"]
 	path = libigl
 	url = https://github.com/libigl/libigl
+[submodule "eigen"]
+	path = eigen
+	url = https://github.com/eigenteam/eigen-git-mirror
